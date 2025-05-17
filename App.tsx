@@ -1,7 +1,7 @@
+import {SafeAreaView} from 'react-native';
 import React, {useEffect, useState} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
 
-import {Splash} from '@screens';
+import {Splash, SongsList} from '@screens';
 
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -13,18 +13,15 @@ const App = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (showSplash) return <Splash />;
+  if (showSplash) {
+    return <Splash />;
+  }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Songs List will go here</Text>
-    </View>
+    <SafeAreaView style={{flex: 1}}>
+      <SongsList />
+    </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {flex: 1, justifyContent: 'center', alignItems: 'center'},
-  text: {fontSize: 20},
-});
 
 export default App;
