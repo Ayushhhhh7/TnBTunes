@@ -2,7 +2,7 @@ import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withTiming,
-  withSpring,
+  withSequence,
 } from 'react-native-reanimated';
 import React, {useEffect} from 'react';
 import {View, StyleSheet, Dimensions} from 'react-native';
@@ -13,11 +13,15 @@ const {width} = Dimensions.get('window');
 
 const Splash = () => {
   const opacity = useSharedValue(0);
-  const scale = useSharedValue(0.7);
+  const scale = useSharedValue(0.5);
 
   useEffect(() => {
-    opacity.value = withTiming(1, {duration: 1000});
-    scale.value = withSpring(1, {damping: 10});
+    opacity.value = withTiming(1, {duration: 400});
+    scale.value = withSequence(
+      withTiming(1, {duration: 500}),
+      withTiming(0.8, {duration: 500}),
+      withTiming(1, {duration: 500}),
+    );
   }, []);
 
   const animatedStyle = useAnimatedStyle(() => ({
