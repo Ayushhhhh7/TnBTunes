@@ -39,7 +39,7 @@ const SongDetail = ({route, navigation}) => {
             <Text style={styles.backButtonText}>‹</Text>
           </TouchableOpacity>
           <Text style={styles.customHeaderTitle}>
-            {songData.trackName || 'Details'}
+            {songData.trackName.split('(')[0] || 'Details'}
           </Text>
           <View style={{width: 40}} />
         </View>
