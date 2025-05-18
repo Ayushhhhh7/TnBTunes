@@ -1,9 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-const ACCENT_MAGENTA = '#DA00FF';
-const ACCENT_CYAN = '#00E0FF';
-const PRIMARY_TEXT_BRIGHT = '#FFFFFF';
-const SECONDARY_TEXT_MUTED = '#B0A0CF';
+import {COLORS} from '@theme';
 
 export default StyleSheet.create({
   container: {
@@ -22,7 +19,7 @@ export default StyleSheet.create({
   },
   backButtonText: {
     fontSize: 30,
-    color: ACCENT_CYAN,
+    color: COLORS.CYAN,
     fontWeight: 'bold',
   },
   customHeaderTitle: {
@@ -30,7 +27,7 @@ export default StyleSheet.create({
     marginTop: 10,
     fontSize: 24,
     fontWeight: 'bold',
-    color: ACCENT_MAGENTA,
+    color: COLORS.MAGENTA,
     textAlign: 'center',
   },
   scrollContentContainer: {
@@ -45,18 +42,18 @@ export default StyleSheet.create({
     marginTop: 10,
     marginBottom: 20,
     borderWidth: 2,
-    borderColor: ACCENT_CYAN + 'A0',
+    borderColor: COLORS.CYAN + 'A0',
   },
   trackNameMain: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: PRIMARY_TEXT_BRIGHT,
+    color: COLORS.WHITE,
     textAlign: 'center',
     marginBottom: 6,
   },
   artistName: {
     fontSize: 17,
-    color: SECONDARY_TEXT_MUTED,
+    color: COLORS.MUTED,
     textAlign: 'center',
     marginBottom: 20,
   },
@@ -76,7 +73,7 @@ export default StyleSheet.create({
     minWidth: 220,
   },
   appleMusicButtonText: {
-    color: PRIMARY_TEXT_BRIGHT,
+    color: COLORS.WHITE,
     fontSize: 15,
     fontWeight: 'bold',
   },

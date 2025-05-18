@@ -1,10 +1,6 @@
-import { StyleSheet, Platform } from 'react-native';
+import {StyleSheet} from 'react-native';
 
-const ACCENT_MAGENTA = '#DA00FF';
-const ACCENT_CYAN = '#00E0FF';
-const ACCENT_PINK = '#FF007F';
-const PRIMARY_TEXT_BRIGHT = '#FFFFFF';
-const SECONDARY_TEXT_MUTED = '#B0A0CF';
+import {COLORS} from '@theme';
 
 export default StyleSheet.create({
   container: {
@@ -23,10 +19,10 @@ export default StyleSheet.create({
   headerContainer: {
     alignItems: 'center',
     paddingBottom: 15,
-    paddingTop: Platform.OS === 'ios' ? 50 : 40,
+    paddingTop: 40,
   },
   headerTitle: {
-    color: ACCENT_MAGENTA,
+    color: COLORS.MAGENTA,
     fontSize: 32,
     fontWeight: 'bold',
     letterSpacing: 1.5,
@@ -36,7 +32,7 @@ export default StyleSheet.create({
   },
   headerSubtitle: {
     fontSize: 16,
-    color: ACCENT_CYAN,
+    color: COLORS.CYAN,
     marginTop: 4,
     fontWeight: '500',
   },
@@ -48,25 +44,25 @@ export default StyleSheet.create({
   statusText: {
     marginTop: 16,
     fontSize: 18,
-    color: PRIMARY_TEXT_BRIGHT,
+    color: COLORS.WHITE,
     textAlign: 'center',
     fontWeight: '500',
   },
   statusDetailText: {
-    color: SECONDARY_TEXT_MUTED,
+    color: COLORS.MUTED,
     fontSize: 14,
     marginTop: 8,
     textAlign: 'center',
   },
   errorTitleText: {
-    color: ACCENT_PINK,
+    color: COLORS.PINK,
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 15,
     textAlign: 'center',
   },
   errorDetailText: {
-    color: PRIMARY_TEXT_BRIGHT,
+    color: COLORS.WHITE,
     fontSize: 16,
     lineHeight: 22,
     marginBottom: 30,
@@ -80,15 +76,15 @@ export default StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 35,
     paddingVertical: 14,
-    shadowColor: ACCENT_MAGENTA,
+    shadowColor: COLORS.MAGENTA,
     shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.5,
     shadowRadius: 8,
   },
   retryButtonText: {
-    color: PRIMARY_TEXT_BRIGHT,
+    color: COLORS.WHITE,
     fontSize: 17,
     fontWeight: 'bold',
   },
-  cardGradientColors: ['#3A1F5F', '#2A0F4F'],
+  cardGradientColors: COLORS.CARD_GRADIENT,
 });

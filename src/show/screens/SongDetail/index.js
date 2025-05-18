@@ -10,15 +10,11 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { DetailItem } from '@components';
-import { formatDate,formatTrackTime } from '@helpers';
+import {COLORS} from '@theme';
+import {DetailItem} from '@components';
+import {formatDate, formatTrackTime} from '@helpers';
 
 import styles from './styles';
-
-const BG_GRADIENT_COLORS = ['#0B001A', '#1D0033', '#2F004D'];
-const CARD_GRADIENT_COLORS = ['#3A1F5F', '#2A0F4F'];
-const ACCENT_MAGENTA = '#DA00FF';
-const ACCENT_PINK = '#FF007F';
 
 const SongDetail = ({route, navigation}) => {
   const {songData} = route.params || {};
@@ -32,7 +28,9 @@ const SongDetail = ({route, navigation}) => {
   };
 
   return (
-    <LinearGradient colors={BG_GRADIENT_COLORS} style={styles.container}>
+    <LinearGradient
+      colors={COLORS.BACKGROUND_GRADIENT}
+      style={styles.container}>
       <SafeAreaView style={{flex: 1}}>
         <View style={styles.customHeader}>
           <TouchableOpacity
@@ -61,7 +59,7 @@ const SongDetail = ({route, navigation}) => {
           </Text>
 
           <LinearGradient
-            colors={CARD_GRADIENT_COLORS}
+            colors={COLORS.CARD_GRADIENT}
             style={styles.detailsCard}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 1}}>
@@ -93,7 +91,7 @@ const SongDetail = ({route, navigation}) => {
           {songData.trackViewUrl && (
             <TouchableOpacity onPress={openTrackUrl} activeOpacity={0.7}>
               <LinearGradient
-                colors={[ACCENT_PINK, ACCENT_MAGENTA]}
+                colors={[COLORS.PINK, COLORS.MAGENTA]}
                 style={styles.appleMusicButton}
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 1}}>

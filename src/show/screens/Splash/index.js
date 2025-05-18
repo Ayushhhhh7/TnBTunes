@@ -4,12 +4,12 @@ import Animated, {
   withTiming,
   withSequence,
 } from 'react-native-reanimated';
+import {View} from 'react-native';
 import React, {useEffect} from 'react';
-import {View, StyleSheet, Dimensions} from 'react-native';
 
 import {TnB} from '@assets/images';
 
-const {width} = Dimensions.get('window');
+import styles from './styles';
 
 const Splash = ({navigation}) => {
   const opacity = useSharedValue(0);
@@ -33,7 +33,7 @@ const Splash = ({navigation}) => {
     setTimeout(() => {
       navigation.replace('SongsList');
     }, 2000);
-  },[]);
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -45,18 +45,5 @@ const Splash = ({navigation}) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#000',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  logo: {
-    width: width * 0.5,
-    height: width * 0.5,
-  },
-});
 
 export default Splash;

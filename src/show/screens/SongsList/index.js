@@ -9,15 +9,11 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import React, {useEffect, useState, useCallback} from 'react';
 
+import {COLORS} from '@theme';
 import {SongItem} from '@components';
 import {fetchSongsFromAPI} from '@api';
 
 import styles from './styles';
-
-const ACCENT_CYAN = '#00E0FF';
-const ACCENT_PINK = '#FF007F';
-const ACCENT_MAGENTA = '#DA00FF';
-const BG_GRADIENT_COLORS = ['#2A254D', '#1D0033', '#2F004D'];
 
 const INITIAL_DISPLAY_COUNT = 10;
 
@@ -60,9 +56,9 @@ const SongList = ({navigation}) => {
   if (isLoading) {
     return (
       <LinearGradient
-        colors={BG_GRADIENT_COLORS}
+        colors={COLORS.LIST_BACKGROUND_GRADIENT}
         style={styles.centeredContainer}>
-        <ActivityIndicator size="large" color={ACCENT_CYAN} />
+        <ActivityIndicator size="large" color={COLORS.CYAN} />
         <Text style={styles.statusText}>Loading TnBTunes...</Text>
       </LinearGradient>
     );
@@ -71,13 +67,13 @@ const SongList = ({navigation}) => {
   if (error && !songs.length) {
     return (
       <LinearGradient
-        colors={BG_GRADIENT_COLORS}
+        colors={COLORS.LIST_BACKGROUND_GRADIENT}
         style={styles.centeredContainer}>
         <Text style={styles.errorTitleText}>Connection Failed</Text>
         <Text style={styles.errorDetailText}>{error}</Text>
         <TouchableOpacity onPress={() => fetchSongs()} activeOpacity={0.7}>
           <LinearGradient
-            colors={[ACCENT_PINK, ACCENT_MAGENTA]}
+            colors={[COLORS.PINK, COLORS.MAGENTA]}
             style={styles.retryButton}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 1}}>
@@ -90,7 +86,7 @@ const SongList = ({navigation}) => {
 
   return (
     <LinearGradient
-      colors={BG_GRADIENT_COLORS}
+      colors={COLORS.LIST_BACKGROUND_GRADIENT}
       style={styles.container}
       start={{x: 0, y: 0}}
       end={{x: 0, y: 1}}>
