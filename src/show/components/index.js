@@ -1,3 +1,4 @@
-import SongItem from "./SongItem";
+import SongItem from './SongItem';
+import DetailItem from './DetailItem';
 
-export {SongItem}
+export {DetailItem, SongItem};

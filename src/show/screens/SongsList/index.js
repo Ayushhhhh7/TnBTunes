@@ -35,9 +35,11 @@ const SongList = ({navigation}) => {
     try {
       const response = await fetch(API_URL);
       const data = await response.json();
-      const tracksList = data.results.filter(
-        item => item.kind === 'song' && item.trackName && item.artworkUrl100,
-      );
+      const tracksList = data.results
+        .filter(
+          item => item.kind === 'song' && item.trackName && item.artworkUrl100,
+        )
+        .reverse();
       setSongs(tracksList);
       await new Promise(resolve => setTimeout(resolve, 1000));
     } catch (err) {
@@ -60,7 +62,7 @@ const SongList = ({navigation}) => {
 
   const handleSongPress = song => {
     console.log('Navigate to detail for:', song.trackName);
-    navigation?.navigate('SongDetail', { songData: song });
+    navigation?.navigate('SongDetail', {songData: song});
   };
 
   if (isLoading) {
