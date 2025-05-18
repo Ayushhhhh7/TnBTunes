@@ -9,7 +9,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-
+import { DetailItem } from '@components';
 import styles from './styles';
 
 const BG_GRADIENT_COLORS = ['#0B001A', '#1D0033', '#2F004D'];
@@ -123,16 +123,5 @@ const SongDetail = ({route, navigation}) => {
     </LinearGradient>
   );
 };
-
-const DetailItem = ({label, value, isLast = false}) => (
-  <View
-    style={[
-      styles.detailItemContainer,
-      isLast && styles.detailItemContainerLast,
-    ]}>
-    <Text style={styles.detailLabel}>{label}:</Text>
-    <Text numberOfLines={1} style={styles.detailValue}>{value.substr(0,40)}</Text>
-  </View>
-);
 
 export default SongDetail;
