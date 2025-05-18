@@ -10,10 +10,9 @@ import LinearGradient from 'react-native-linear-gradient';
 import React, {useEffect, useState, useCallback} from 'react';
 
 import {SongItem} from '@components';
+import {fetchSongsFromAPI} from '@api';
 
 import styles from './styles';
-
-const API_URL = 'https://itunes.apple.com/search?term=Michael+jackson';
 
 const ACCENT_CYAN = '#00E0FF';
 const ACCENT_PINK = '#FF007F';
@@ -33,15 +32,8 @@ const SongList = ({navigation}) => {
     setError(null);
 
     try {
-      const response = await fetch(API_URL);
-      const data = await response.json();
-      const tracksList = data.results
-        .filter(
-          item => item.kind === 'song' && item.trackName && item.artworkUrl100,
-        )
-        .reverse();
+      const tracksList = await fetchSongsFromAPI();
       setSongs(tracksList);
-      await new Promise(resolve => setTimeout(resolve, 1000));
     } catch (err) {
       console.error('API fetch failed:', err);
       setError(err.message || 'Network error occurred');
