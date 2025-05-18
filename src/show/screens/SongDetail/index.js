@@ -9,31 +9,16 @@ import {
   SafeAreaView,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+
 import { DetailItem } from '@components';
+import { formatDate,formatTrackTime } from '@helpers';
+
 import styles from './styles';
 
 const BG_GRADIENT_COLORS = ['#0B001A', '#1D0033', '#2F004D'];
 const CARD_GRADIENT_COLORS = ['#3A1F5F', '#2A0F4F'];
 const ACCENT_MAGENTA = '#DA00FF';
 const ACCENT_PINK = '#FF007F';
-
-const formatDate = isoDateString => {
-  if (!isoDateString) return 'N/A';
-  const date = new Date(isoDateString);
-  return date.toLocaleDateString(undefined, {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-};
-
-const formatTrackTime = millis => {
-  if (!millis) return 'N/A';
-  const totalSeconds = Math.floor(millis / 1000);
-  const minutes = Math.floor(totalSeconds / 60);
-  const seconds = totalSeconds % 60;
-  return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-};
 
 const SongDetail = ({route, navigation}) => {
   const {songData} = route.params || {};

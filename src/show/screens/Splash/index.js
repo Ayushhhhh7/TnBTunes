@@ -7,7 +7,7 @@ import Animated, {
 import React, {useEffect} from 'react';
 import {View, StyleSheet, Dimensions} from 'react-native';
 
-import {TnB} from '@assets';
+import {TnB} from '@assets/images';
 
 const {width} = Dimensions.get('window');
 

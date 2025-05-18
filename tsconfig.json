@@ -6,8 +6,10 @@
       "@api/*": ["src/process/api/*"],
       "@assets/*": ["src/show/assets/*"],
       "@components/*": ["src/show/components/*"],
+      "@helpers/*": ["src/process/helpers/*"],
       "@navigator/*": ["src/show/navigator/*"],
       "@screens/*": ["src/show/screens/*"],
+      "@theme/*": ["src/show/theme/*"],
       "@utils/*": ["src/show/utils/*"],
     }
   }
