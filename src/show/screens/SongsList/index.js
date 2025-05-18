@@ -100,8 +100,8 @@ const SongList = ({navigation}) => {
     <LinearGradient
       colors={BG_GRADIENT_COLORS}
       style={styles.container}
-      start={{x: 0.5, y: 0}}
-      end={{x: 0.5, y: 1}}>
+      start={{x: 0, y: 0}}
+      end={{x: 0, y: 1}}>
       <View style={styles.headerContainer}>
         <Text style={styles.headerTitle}>TNBTUNES</Text>
         <Text style={styles.headerSubtitle}>Michael Jackson Hits</Text>
