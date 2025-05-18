@@ -18,7 +18,7 @@ const API_URL = 'https://itunes.apple.com/search?term=Michael+jackson';
 const ACCENT_CYAN = '#00E0FF';
 const ACCENT_PINK = '#FF007F';
 const ACCENT_MAGENTA = '#DA00FF';
-const BG_GRADIENT_COLORS = ['#0B001A', '#1D0033', '#2F004D'];
+const BG_GRADIENT_COLORS = ['#2A254D', '#1D0033', '#2F004D'];
 
 const INITIAL_DISPLAY_COUNT = 10;
 
@@ -60,7 +60,7 @@ const SongList = ({navigation}) => {
 
   const handleSongPress = song => {
     console.log('Navigate to detail for:', song.trackName);
-    // navigation?.navigate('SongDetail', { songData: song });
+    navigation?.navigate('SongDetail', { songData: song });
   };
 
   if (isLoading) {

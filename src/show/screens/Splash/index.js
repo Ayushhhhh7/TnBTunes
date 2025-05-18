@@ -11,7 +11,7 @@ import {TnB} from '@assets';
 
 const {width} = Dimensions.get('window');
 
-const Splash = () => {
+const Splash = ({navigation}) => {
   const opacity = useSharedValue(0);
   const scale = useSharedValue(0.5);
 
@@ -28,6 +28,12 @@ const Splash = () => {
     opacity: opacity.value,
     transform: [{scale: scale.value}],
   }));
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.replace('SongsList');
+    }, 2000);
+  },[]);
 
   return (
     <View style={styles.container}>

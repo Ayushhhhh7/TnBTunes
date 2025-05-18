@@ -1,27 +1,21 @@
-import {SafeAreaView} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React from 'react';
+import {SafeAreaView, StyleSheet} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 
-import {Splash, SongsList} from '@screens';
+import AppNavigator from '@navigator';
 
-const App = () => {
-  const [showSplash, setShowSplash] = useState(true);
+const App = () => (
+  <SafeAreaView style={styles.safeArea}>
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
+  </SafeAreaView>
+);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 2500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (showSplash) {
-    return <Splash />;
-  }
-
-  return (
-    <SafeAreaView style={{flex: 1}}>
-      <SongsList />
-    </SafeAreaView>
-  );
-};
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
+});
 
 export default App;

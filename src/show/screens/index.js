@@ -1,4 +1,5 @@
-import Splash from "./Splash";
-import SongsList from './SongsList'
+import Splash from './Splash';
+import SongsList from './SongsList';
+import SongDetail from './SongDetail';
 
-export {Splash,SongsList}
+export {Splash, SongDetail, SongsList};
